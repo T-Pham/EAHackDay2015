@@ -19,7 +19,6 @@ static Session *CurrentSession;
     if (data) {
         CurrentSession = [[self alloc] init];
         CurrentSession.data = data;
-        NSLog(@"%@", data);
     } else {
         CurrentSession = nil;
     }
