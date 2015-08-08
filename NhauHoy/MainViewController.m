@@ -66,7 +66,7 @@
             [self presentViewController:navigationController animated:YES completion:nil];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         } failure:^(NSError *error) {
-            [[[UIAlertView alloc] initWithTitle:NSStringFromClass(error.class) message:error.localizedDescription delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Try again", nil] showUsingBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
+            [[[UIAlertView alloc] initWithTitle:NSStringFromClass(error.class) message:error.localizedDescription cancelButtonTitle:@"Cancel" otherButtonTitle:@"Retry"] showUsingBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
                 if (buttonIndex == 1) {
                     [self signInWhenReady];
                 }
