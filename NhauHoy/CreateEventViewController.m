@@ -16,7 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Create event";
+    self.title = @"Create Event";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonTapped:)];
+}
+
+- (void)cancelButtonTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
