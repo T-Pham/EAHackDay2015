@@ -12,20 +12,13 @@
 #import "ServerHelper.h"
 #import "CreateEventViewController.h"
 #import "Event.h"
+#import "EventStore.h"
 
-@interface EventListViewController () {
-    NSMutableArray *eventList;
-}
+@interface EventListViewController ()
 
 @end
 
 @implementation EventListViewController
-
-- (instancetype)init {
-    self = [super init];
-    eventList = [NSMutableArray array];
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,12 +28,17 @@
     [self fetchEvents];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (void)fetchEvents {
-    [eventList removeAllObjects];
+    [[EventStore store].eventList removeAllObjects];
     [ServerHelper getJsonFromPath:@"/v1/events" parameters:nil requestMethod:@"GET" success:^(id response) {
         for (NSDictionary *eventData in response[@"events"]) {
             Event *event = [[Event alloc] initWithData:eventData];
-            [eventList addObject:event];
+            [[EventStore store].eventList addObject:event];
         }
         [self.tableView reloadData];
     } failure:^(NSError *error) {
@@ -59,12 +57,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return eventList.count;
+    return [EventStore store].eventList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.textLabel.text = [eventList[indexPath.row] name];
+    cell.textLabel.text = [[EventStore store].eventList[indexPath.row] name];
     return cell;
 }
 
