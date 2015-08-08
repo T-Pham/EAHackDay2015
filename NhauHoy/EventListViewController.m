@@ -67,7 +67,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     Event *event = [EventStore store].eventList[indexPath.row];
-    cell.textLabel.text = event.name;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ (%@)", event.name, event.totalBill];
     cell.detailTextLabel.text = event.startTime.presentationString;
     return cell;
 }

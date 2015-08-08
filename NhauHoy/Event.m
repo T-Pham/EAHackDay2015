@@ -39,10 +39,9 @@
     return _data[@"name"];
 }
 
-- (NSArray *)billIdList {
-    return _data[@"bills"];
+- (NSNumber *)totalBill {
+    return _data[@"total_bill"];
 }
-
 
 - (void)setFriendIdList:(NSArray *)friendIdList {
     _friendIdList = [NSMutableArray arrayWithArray:friendIdList];

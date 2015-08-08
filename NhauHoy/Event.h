@@ -15,7 +15,7 @@
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSDate *startTime;
 @property (nonatomic) NSArray *friendIdList;
-@property (nonatomic) NSArray *billIdList;
+@property (nonatomic) NSNumber *totalBill;
 
 - (instancetype)initWithData:(NSDictionary *)data;
 
