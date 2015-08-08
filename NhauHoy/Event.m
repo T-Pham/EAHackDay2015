@@ -28,4 +28,12 @@
     return _data[@"start_time"];
 }
 
+- (NSArray *)friendIdList {
+    return _data[@"rsvps"];
+}
+
+- (NSArray *)billIdList {
+    return _data[@"bills"];
+}
+
 @end

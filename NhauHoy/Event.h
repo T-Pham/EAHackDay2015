@@ -14,6 +14,8 @@
 @property (nonatomic) NSString *eid;
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSDate *startTime;
+@property (nonatomic) NSArray *friendIdList;
+@property (nonatomic) NSArray *billIdList;
 
 - (instancetype)initWithData:(NSDictionary *)data;
 
