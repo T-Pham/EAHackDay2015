@@ -10,6 +10,7 @@
 
 #import "EventListViewController.h"
 #import "ServerHelper.h"
+#import "CreateEventViewController.h"
 
 @interface EventListViewController ()
 
@@ -37,13 +38,9 @@
 }
 
 - (void)addButtonTapped:(id)sender {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Create new event" message:@"Enter event name" cancelButtonTitle:@"Cancel" otherButtonTitle:@"Create"];
-    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alertView showUsingBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
-        if (buttonIndex == 1) {
-            NSLog(@"%@", [[alertView textFieldAtIndex:0] text]);
-        }
-    }];
+    CreateEventViewController *createEventViewController = [[CreateEventViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:createEventViewController];
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 @end
