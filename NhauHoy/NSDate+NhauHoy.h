@@ -10,6 +10,7 @@
 
 @interface NSDate (NhauHoy)
 
+- (NSString *)iso8601string;
 - (NSString *)presentationString;
 
 @end

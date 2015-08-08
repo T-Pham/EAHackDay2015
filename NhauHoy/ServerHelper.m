@@ -7,10 +7,10 @@
 //
 
 #import <AFNetworking.h>
-#import <ISO8601DateFormatter.h>
 
 #import "ServerHelper.h"
 #import "Session.h"
+#import "NSDate+NhauHoy.h"
 
 @implementation ServerHelper
 static AFHTTPRequestOperationManager *requestOperationManager;
@@ -36,9 +36,9 @@ static AFHTTPRequestOperationManager *requestOperationManager;
 
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     for (NSString *key in originalParameters.allKeys) {
-        NSObject *value = originalParameters[key];
+        id value = originalParameters[key];
         if ([value isKindOfClass:[NSDate class]]) {
-            value = [[[ISO8601DateFormatter alloc] init] stringFromDate:(NSDate *)value];
+            value = [value iso8601string];
         }
         parameters[key] = value;
     }
