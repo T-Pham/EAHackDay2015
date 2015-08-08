@@ -15,6 +15,7 @@
 #import "EventStore.h"
 #import "NSDate+NhauHoy.h"
 #import "TableViewCell.h"
+#import "EventDetailsViewController.h"
 
 @interface EventListViewController ()
 
@@ -72,6 +73,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Event *event = [EventStore store].eventList[indexPath.row];
+    EventDetailsViewController *eventDetailsViewController = [[EventDetailsViewController alloc] init];
+    eventDetailsViewController.event = event;
+    [self.navigationController pushViewController:eventDetailsViewController animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

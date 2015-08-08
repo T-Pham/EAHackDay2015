@@ -26,6 +26,8 @@
 		1BE6E3D71B766FC8006BF86B /* FriendStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6E3D61B766FC8006BF86B /* FriendStore.m */; };
 		1BE6E3DB1B76795A006BF86B /* NSDate+NhauHoy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6E3DA1B76795A006BF86B /* NSDate+NhauHoy.m */; };
 		1BE6E3DE1B767B7B006BF86B /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6E3DD1B767B7B006BF86B /* TableViewCell.m */; };
+		1BE6E3E21B767F46006BF86B /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6E3E01B767F46006BF86B /* EventDetailsViewController.m */; };
+		1BE6E3E31B767F46006BF86B /* EventDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BE6E3E11B767F46006BF86B /* EventDetailsViewController.xib */; };
 		A2DEF149EFEE442C34A2E008 /* libPods-NhauHoy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75CF89114C3E946399258331 /* libPods-NhauHoy.a */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,9 @@
 		1BE6E3DA1B76795A006BF86B /* NSDate+NhauHoy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NhauHoy.m"; sourceTree = "<group>"; };
 		1BE6E3DC1B767B7B006BF86B /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		1BE6E3DD1B767B7B006BF86B /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		1BE6E3DF1B767F45006BF86B /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
+		1BE6E3E01B767F46006BF86B /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
+		1BE6E3E11B767F46006BF86B /* EventDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailsViewController.xib; sourceTree = "<group>"; };
 		50FE3666F059625AA8EAE32C /* Pods-NhauHoy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhauHoy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NhauHoy/Pods-NhauHoy.debug.xcconfig"; sourceTree = "<group>"; };
 		75CF89114C3E946399258331 /* libPods-NhauHoy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NhauHoy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F3AD3C8D5FE83524D3E8AF5 /* Pods-NhauHoy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhauHoy.release.xcconfig"; path = "Pods/Target Support Files/Pods-NhauHoy/Pods-NhauHoy.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +159,9 @@
 				1BE6E3DA1B76795A006BF86B /* NSDate+NhauHoy.m */,
 				1BE6E3DC1B767B7B006BF86B /* TableViewCell.h */,
 				1BE6E3DD1B767B7B006BF86B /* TableViewCell.m */,
+				1BE6E3DF1B767F45006BF86B /* EventDetailsViewController.h */,
+				1BE6E3E01B767F46006BF86B /* EventDetailsViewController.m */,
+				1BE6E3E11B767F46006BF86B /* EventDetailsViewController.xib */,
 			);
 			path = NhauHoy;
 			sourceTree = "<group>";
@@ -286,6 +294,7 @@
 				1B276A131B75E86900296FB1 /* Podfile in Resources */,
 				1B276A151B75E9F700296FB1 /* .gitignore in Resources */,
 				1B2769F71B75E51500296FB1 /* Images.xcassets in Resources */,
+				1BE6E3E31B767F46006BF86B /* EventDetailsViewController.xib in Resources */,
 				1BE6E3C01B765478006BF86B /* CreateEventViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +352,7 @@
 				1BE6E3D11B766E9B006BF86B /* Friend.m in Sources */,
 				1B276A181B76113600296FB1 /* ServerHelper.m in Sources */,
 				1BE6E3BB1B764949006BF86B /* EventListViewController.m in Sources */,
+				1BE6E3E21B767F46006BF86B /* EventDetailsViewController.m in Sources */,
 				1BE6E3B81B764426006BF86B /* Session.m in Sources */,
 				1BE6E3DE1B767B7B006BF86B /* TableViewCell.m in Sources */,
 				1BE6E3D41B766F81006BF86B /* FriendListViewController.m in Sources */,
