@@ -22,6 +22,7 @@
 
 - (void)reloadData {
     _nameLabel.text = _event.name;
+    _totalBillLabel.text = _event.totalBill.description;
     _dateLabel.text = _event.startTime.presentationString;
 }
 

@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="dateLabel" destination="SMg-uX-mhV" id="qdG-2M-k0Z"/>
                 <outlet property="nameLabel" destination="YlU-JP-nVy" id="pfB-Lr-Bqf"/>
+                <outlet property="totalBillLabel" destination="iBO-6G-vDQ" id="P9t-Oo-Z82"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,20 +17,20 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlU-JP-nVy">
-                    <rect key="frame" x="15" y="71" width="322" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlU-JP-nVy">
+                    <rect key="frame" x="15" y="71" width="290" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMg-uX-mhV">
-                    <rect key="frame" x="15" y="106" width="322" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMg-uX-mhV">
+                    <rect key="frame" x="15" y="106" width="290" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4of-Wr-f47">
-                    <rect key="frame" x="15" y="141.5" width="290" height="30"/>
+                    <rect key="frame" x="15" y="177" width="290" height="30"/>
                     <state key="normal" title="Edit friends">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -37,18 +38,27 @@
                         <action selector="editFriendsButtonTapped:" destination="-1" eventType="touchUpInside" id="nor-SB-Sr9"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBO-6G-vDQ">
+                    <rect key="frame" x="15" y="141.5" width="290" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="4of-Wr-f47" firstAttribute="top" secondItem="iBO-6G-vDQ" secondAttribute="bottom" constant="15" id="0Wa-60-32J"/>
                 <constraint firstItem="SMg-uX-mhV" firstAttribute="leading" secondItem="YlU-JP-nVy" secondAttribute="leading" id="0uH-KO-W9c"/>
                 <constraint firstItem="YlU-JP-nVy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="3RG-IC-jg9"/>
+                <constraint firstItem="SMg-uX-mhV" firstAttribute="trailing" secondItem="iBO-6G-vDQ" secondAttribute="trailing" id="9go-Ai-7Lw"/>
                 <constraint firstItem="SMg-uX-mhV" firstAttribute="trailing" secondItem="YlU-JP-nVy" secondAttribute="trailing" id="G2n-gB-6dm"/>
                 <constraint firstItem="4of-Wr-f47" firstAttribute="leading" secondItem="SMg-uX-mhV" secondAttribute="leading" id="Kad-mt-fwm"/>
                 <constraint firstAttribute="trailing" secondItem="YlU-JP-nVy" secondAttribute="trailing" constant="15" id="RpA-za-nLY"/>
+                <constraint firstItem="iBO-6G-vDQ" firstAttribute="top" secondItem="SMg-uX-mhV" secondAttribute="bottom" constant="15" id="TM6-H9-QgS"/>
                 <constraint firstItem="SMg-uX-mhV" firstAttribute="top" secondItem="YlU-JP-nVy" secondAttribute="bottom" constant="15" id="Udw-Mn-lxn"/>
-                <constraint firstItem="4of-Wr-f47" firstAttribute="top" secondItem="SMg-uX-mhV" secondAttribute="bottom" constant="15" id="Vb8-O2-VCk"/>
                 <constraint firstItem="YlU-JP-nVy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="71" id="YLk-5O-hPD"/>
                 <constraint firstItem="4of-Wr-f47" firstAttribute="trailing" secondItem="SMg-uX-mhV" secondAttribute="trailing" id="ZxH-uR-B1E"/>
+                <constraint firstItem="SMg-uX-mhV" firstAttribute="leading" secondItem="iBO-6G-vDQ" secondAttribute="leading" id="oUa-RW-DEA"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
