@@ -13,6 +13,8 @@
 #import "CreateEventViewController.h"
 #import "Event.h"
 #import "EventStore.h"
+#import "NSDate+NhauHoy.h"
+#import "TableViewCell.h"
 
 @interface EventListViewController ()
 
@@ -24,7 +26,7 @@
     [super viewDidLoad];
     self.title = @"Event List";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonTapped:)];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    [self.tableView registerClass:[TableViewCell class] forCellReuseIdentifier:@"cell"];
     [self fetchEvents];
 }
 
@@ -62,7 +64,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.textLabel.text = [[EventStore store].eventList[indexPath.row] name];
+    Event *event = [EventStore store].eventList[indexPath.row];
+    cell.textLabel.text = event.name;
+    cell.detailTextLabel.text = event.startTime.presentationString;
     return cell;
 }
 
