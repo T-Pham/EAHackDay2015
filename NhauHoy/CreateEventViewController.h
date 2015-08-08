@@ -12,5 +12,6 @@
 @interface CreateEventViewController : UIViewController
 
 @property (nonatomic) IBOutlet JVFloatLabeledTextField *nameField;
+@property (nonatomic) IBOutlet UIDatePicker *dateField;
 
 @end
