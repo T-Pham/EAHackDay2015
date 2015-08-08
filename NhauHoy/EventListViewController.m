@@ -26,7 +26,7 @@
 }
 
 - (void)fetchEvents {
-    [ServerHelper getJsonFromPath:@"/v1/events" parameters:@{@"nhau_i_token": [Session currentSession].data[@"session"][@"token"]} requestMethod:@"GET" success:^(id response) {
+    [ServerHelper getJsonFromPath:@"/v1/events" parameters:nil requestMethod:@"GET" success:^(id response) {
         NSLog(@"%@", response);
     } failure:^(NSError *error) {
         [[[UIAlertView alloc] initWithTitle:@"Failed to fetch events" message:error.localizedDescription cancelButtonTitle:@"Cancel" otherButtonTitle:@"Retry"] showUsingBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {

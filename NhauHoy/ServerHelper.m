@@ -7,8 +7,10 @@
 //
 
 #import <AFNetworking.h>
+#import <ISO8601DateFormatter.h>
 
 #import "ServerHelper.h"
+#import "Session.h"
 
 @implementation ServerHelper
 static AFHTTPRequestOperationManager *requestOperationManager;
@@ -29,8 +31,23 @@ static AFHTTPRequestOperationManager *requestOperationManager;
     [self getJsonFromPath:path parameters:parameters requestMethod:requestMethod timeout:30 success:success failure:failure];
 }
 
-+ (void)getJsonFromPath:(NSString *)path parameters:(NSDictionary *)parameters requestMethod:(NSString *)requestMethod timeout:(NSTimeInterval)timeout success:(void (^)(id))success failure:(void (^)(NSError *))failure {
++ (void)getJsonFromPath:(NSString *)path parameters:(NSDictionary *)originalParameters requestMethod:(NSString *)requestMethod timeout:(NSTimeInterval)timeout success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     NSURL *url = [self urlWithPath:path];
+
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    for (NSString *key in originalParameters.allKeys) {
+        NSObject *value = originalParameters[key];
+        if ([value isKindOfClass:[NSDate class]]) {
+            value = [[[ISO8601DateFormatter alloc] init] stringFromDate:(NSDate *)value];
+        }
+        parameters[key] = value;
+    }
+
+    NSString *token = [Session currentSession].data[@"session"][@"token"];
+    if (token) {
+        parameters[@"nhau_i_token"] = token;
+    }
+
     NSMutableURLRequest *request = [requestOperationManager.requestSerializer requestWithMethod:requestMethod URLString:url.absoluteString parameters:parameters error:nil];
     request.timeoutInterval = timeout;
     AFHTTPRequestOperation *requestOperation = [requestOperationManager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
