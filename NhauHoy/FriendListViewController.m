@@ -7,6 +7,7 @@
 //
 
 #import <UIAlertView+Block.h>
+#import <MBProgressHUD.h>
 
 #import "FriendListViewController.h"
 #import "Friend.h"
@@ -43,6 +44,7 @@
 }
 
 - (void)fetchFriends {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[FriendStore store].friendList removeAllObjects];
     [ServerHelper getJsonFromPath:@"/v1/friends" parameters:nil requestMethod:@"GET" success:^(id response) {
         for (NSDictionary *friendData in response[@"friends"]) {
@@ -50,12 +52,14 @@
             [[FriendStore store].friendList addObject:friend];
         }
         [self.tableView reloadData];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     } failure:^(NSError *error) {
         [[[UIAlertView alloc] initWithTitle:@"Failed to fetch friend list" message:error.localizedDescription cancelButtonTitle:@"Cancel" otherButtonTitle:@"Retry"] showUsingBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
             if (buttonIndex == 1) {
                 [self fetchFriends];
             }
         }];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 }
 
