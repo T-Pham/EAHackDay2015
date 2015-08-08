@@ -14,6 +14,7 @@
 #import "MainViewController.h"
 #import "ServerHelper.h"
 #import "Session.h"
+#import "EventListViewController.h"
 
 @interface MainViewController () <FBSDKLoginButtonDelegate> {
     FBSDKLoginButton *loginButton;
@@ -60,6 +61,9 @@
 
         [ServerHelper getJsonFromPath:@"v1/sessions" parameters:@{@"token": token.tokenString} requestMethod:@"POST" success:^(id response) {
             [Session setCurrentSessionWithData:response];
+            EventListViewController *eventListViewController = [[EventListViewController alloc] init];
+            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:eventListViewController];
+            [self presentViewController:navigationController animated:YES completion:nil];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         } failure:^(NSError *error) {
             [[[UIAlertView alloc] initWithTitle:NSStringFromClass(error.class) message:error.localizedDescription delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Try again", nil] showUsingBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
