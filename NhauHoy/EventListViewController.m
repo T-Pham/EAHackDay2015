@@ -64,6 +64,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     Event *event = [EventStore store].eventList[indexPath.row];
     cell.textLabel.text = event.name;
     cell.detailTextLabel.text = event.startTime.presentationString;
