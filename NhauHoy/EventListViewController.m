@@ -10,7 +10,6 @@
 
 #import "EventListViewController.h"
 #import "ServerHelper.h"
-#import "Session.h"
 
 @interface EventListViewController ()
 
