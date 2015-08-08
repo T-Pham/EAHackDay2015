@@ -8,6 +8,7 @@
 
 #import <FBSDKCoreKit.h>
 #import <FBSDKLoginKit.h>
+#import <MBProgressHUD.h>
 
 #import "MainViewController.h"
 
@@ -51,8 +52,11 @@
 - (void)signInWhenReady {
     FBSDKAccessToken *token = [FBSDKAccessToken currentAccessToken];
     FBSDKProfile *profile = [FBSDKProfile currentProfile];
-    
+
     NSLog(@"%@ %@", profile.userID, token.tokenString);
+    if (token) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
 }
 
 #pragma mark - FBSDKLoginButtonDelegate
