@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class FriendListViewController;
+
+@protocol FriendListViewControllerDelegate <NSObject>
+
+- (void)friendListViewControllerDidSave:(FriendListViewController *)friendListViewController;
+
+@end
+
 @interface FriendListViewController : UITableViewController
 
 @property (nonatomic) NSArray *selectedFriendIdList;
+@property (nonatomic, weak) id<FriendListViewControllerDelegate> delegate;
 
 @end

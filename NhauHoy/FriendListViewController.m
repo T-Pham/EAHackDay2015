@@ -31,6 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Friend List";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonTapped:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonTapped:)];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self fetchFriends];
 }
@@ -60,6 +62,15 @@
 - (void)setSelectedFriendIdList:(NSArray *)selectedFriendIdList {
     _selectedFriendIdList = [NSMutableArray arrayWithArray:selectedFriendIdList];
     [self.tableView reloadData];
+}
+
+- (void)cancelButtonTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)saveButtonTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [_delegate friendListViewControllerDidSave:self];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

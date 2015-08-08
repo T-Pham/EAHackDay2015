@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FriendListViewController.h"
 #import "Event.h"
 
-@interface EventDetailsViewController : UIViewController
+@interface EventDetailsViewController : UIViewController<FriendListViewControllerDelegate>
 
 @property (nonatomic) Event *event;
 

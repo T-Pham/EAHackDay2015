@@ -10,7 +10,14 @@
 
 #import "Event.h"
 
+@interface Event () {
+    NSMutableArray *_friendIdList;
+}
+
+@end
+
 @implementation Event
+@synthesize friendIdList=_friendIdList;
 
 - (instancetype)initWithData:(NSDictionary *)data {
     self = [super init];
@@ -21,6 +28,7 @@
 - (void)setData:(NSDictionary *)data {
     _data = data;
     _startTime = [[[ISO8601DateFormatter alloc] init] dateFromString:_data[@"start_time"]];
+    _friendIdList = [NSMutableArray arrayWithArray:_data[@"rsvps"]];
 }
 
 - (NSString *)eid {
@@ -31,12 +39,13 @@
     return _data[@"name"];
 }
 
-- (NSArray *)friendIdList {
-    return _data[@"rsvps"];
-}
-
 - (NSArray *)billIdList {
     return _data[@"bills"];
+}
+
+
+- (void)setFriendIdList:(NSArray *)friendIdList {
+    _friendIdList = [NSMutableArray arrayWithArray:friendIdList];
 }
 
 @end
