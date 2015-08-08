@@ -22,7 +22,7 @@ static AFHTTPRequestOperationManager *requestOperationManager;
 }
 
 + (NSURL *)urlWithPath:(NSString *)path {
-    return [NSURL URLWithString:path relativeToURL:[NSURL URLWithString:@"http://192.168.1.1/"]];
+    return [NSURL URLWithString:path relativeToURL:[NSURL URLWithString:@"http://403f500b.ngrok.com/"]];
 }
 
 + (void)getJsonFromPath:(NSString *)path parameters:(NSDictionary *)parameters requestMethod:(NSString *)requestMethod success:(void (^)(id))success failure:(void (^)(NSError *))failure {

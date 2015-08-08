@@ -6,6 +6,7 @@ target 'NhauHoy' do
     pod 'FBSDKCoreKit'
     pod 'FBSDKLoginKit'
     pod 'MBProgressHUD', '~> 0.9'
+    pod 'UIAlertView+Block', '~> 1.1'
 end
 
 target 'NhauHoyTests' do

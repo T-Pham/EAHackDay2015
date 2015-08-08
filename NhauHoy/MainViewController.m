@@ -9,6 +9,7 @@
 #import <FBSDKCoreKit.h>
 #import <FBSDKLoginKit.h>
 #import <MBProgressHUD.h>
+#import <UIAlertView+Block.h>
 
 #import "MainViewController.h"
 #import "ServerHelper.h"
@@ -60,7 +61,11 @@
             NSLog(@"success: %@", response);
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         } failure:^(NSError *error) {
-            [[[UIAlertView alloc] initWithTitle:NSStringFromClass(error.class) message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            [[[UIAlertView alloc] initWithTitle:NSStringFromClass(error.class) message:error.localizedDescription delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Try again", nil] showUsingBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
+                if (buttonIndex == 1) {
+                    [self signInWhenReady];
+                }
+            }];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         }];
     }
