@@ -13,6 +13,7 @@
 
 #import "MainViewController.h"
 #import "ServerHelper.h"
+#import "Session.h"
 
 @interface MainViewController () <FBSDKLoginButtonDelegate> {
     FBSDKLoginButton *loginButton;
@@ -58,7 +59,7 @@
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 
         [ServerHelper getJsonFromPath:@"v1/sessions" parameters:@{@"token": token.tokenString} requestMethod:@"POST" success:^(id response) {
-            NSLog(@"success: %@", response);
+            [Session setCurrentSessionWithData:response];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         } failure:^(NSError *error) {
             [[[UIAlertView alloc] initWithTitle:NSStringFromClass(error.class) message:error.localizedDescription delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Try again", nil] showUsingBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
@@ -78,6 +79,8 @@
     }
 }
 
-- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {}
+- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
+    [Session setCurrentSessionWithData:nil];
+}
 
 @end
