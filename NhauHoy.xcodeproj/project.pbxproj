@@ -14,6 +14,7 @@
 		1B276A111B75E59900296FB1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B276A101B75E59900296FB1 /* MainViewController.m */; };
 		1B276A131B75E86900296FB1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1B276A121B75E86900296FB1 /* Podfile */; };
 		1B276A151B75E9F700296FB1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1B276A141B75E9F700296FB1 /* .gitignore */; };
+		1B276A181B76113600296FB1 /* ServerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B276A171B76113600296FB1 /* ServerHelper.m */; };
 		A2DEF149EFEE442C34A2E008 /* libPods-NhauHoy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75CF89114C3E946399258331 /* libPods-NhauHoy.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		1B276A101B75E59900296FB1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		1B276A121B75E86900296FB1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		1B276A141B75E9F700296FB1 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		1B276A161B76113600296FB1 /* ServerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerHelper.h; sourceTree = "<group>"; };
+		1B276A171B76113600296FB1 /* ServerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerHelper.m; sourceTree = "<group>"; };
 		50FE3666F059625AA8EAE32C /* Pods-NhauHoy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhauHoy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NhauHoy/Pods-NhauHoy.debug.xcconfig"; sourceTree = "<group>"; };
 		75CF89114C3E946399258331 /* libPods-NhauHoy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NhauHoy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F3AD3C8D5FE83524D3E8AF5 /* Pods-NhauHoy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhauHoy.release.xcconfig"; path = "Pods/Target Support Files/Pods-NhauHoy/Pods-NhauHoy.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 				1B2769E91B75E51500296FB1 /* Supporting Files */,
 				1B276A0F1B75E59900296FB1 /* MainViewController.h */,
 				1B276A101B75E59900296FB1 /* MainViewController.m */,
+				1B276A161B76113600296FB1 /* ServerHelper.h */,
+				1B276A171B76113600296FB1 /* ServerHelper.m */,
 			);
 			path = NhauHoy;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B276A181B76113600296FB1 /* ServerHelper.m in Sources */,
 				1B2769EF1B75E51500296FB1 /* AppDelegate.m in Sources */,
 				1B276A111B75E59900296FB1 /* MainViewController.m in Sources */,
 				1B2769EC1B75E51500296FB1 /* main.m in Sources */,

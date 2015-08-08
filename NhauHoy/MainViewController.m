@@ -11,6 +11,7 @@
 #import <MBProgressHUD.h>
 
 #import "MainViewController.h"
+#import "ServerHelper.h"
 
 @interface MainViewController () <FBSDKLoginButtonDelegate> {
     FBSDKLoginButton *loginButton;
@@ -51,11 +52,17 @@
 
 - (void)signInWhenReady {
     FBSDKAccessToken *token = [FBSDKAccessToken currentAccessToken];
-    FBSDKProfile *profile = [FBSDKProfile currentProfile];
 
-    NSLog(@"%@ %@", profile.userID, token.tokenString);
     if (token) {
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
+        [ServerHelper getJsonFromPath:@"v1/sessions" parameters:@{@"token": token.tokenString} requestMethod:@"POST" success:^(id response) {
+            NSLog(@"success: %@", response);
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        } failure:^(NSError *error) {
+            [[[UIAlertView alloc] initWithTitle:NSStringFromClass(error.class) message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        }];
     }
 }
 
