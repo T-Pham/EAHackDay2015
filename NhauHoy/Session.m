@@ -8,12 +8,6 @@
 
 #import "Session.h"
 
-@interface Session ()
-
-@property (nonatomic) NSDictionary *data;
-
-@end
-
 @implementation Session
 static Session *CurrentSession;
 

@@ -9,6 +9,8 @@
 #import <UIAlertView+Block.h>
 
 #import "EventListViewController.h"
+#import "ServerHelper.h"
+#import "Session.h"
 
 @interface EventListViewController ()
 
@@ -20,6 +22,19 @@
     [super viewDidLoad];
     self.title = @"Event List";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonTapped:)];
+    [self fetchEvents];
+}
+
+- (void)fetchEvents {
+    [ServerHelper getJsonFromPath:@"/v1/events" parameters:@{@"nhau_i_token": [Session currentSession].data[@"session"][@"token"]} requestMethod:@"GET" success:^(id response) {
+        NSLog(@"%@", response);
+    } failure:^(NSError *error) {
+        [[[UIAlertView alloc] initWithTitle:@"Failed to fetch events" message:error.localizedDescription cancelButtonTitle:@"Cancel" otherButtonTitle:@"Retry"] showUsingBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
+            if (buttonIndex == 1) {
+                [self fetchEvents];
+            }
+        }];
+    }];
 }
 
 - (void)addButtonTapped:(id)sender {

@@ -10,6 +10,8 @@
 
 @interface Session : NSObject
 
+@property (nonatomic) NSDictionary *data;
+
 + (instancetype)currentSession;
 + (void)setCurrentSessionWithData:(NSDictionary *)data;
 
