@@ -10,4 +10,6 @@
 
 @interface FriendListViewController : UITableViewController
 
+@property (nonatomic) NSMutableArray *selectedFriendIdList;
+
 @end

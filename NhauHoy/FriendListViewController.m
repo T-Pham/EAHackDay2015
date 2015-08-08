@@ -19,6 +19,12 @@
 
 @implementation FriendListViewController
 
+- (instancetype)init {
+    self = [super init];
+    _selectedFriendIdList = [NSMutableArray array];
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Friend List";
@@ -48,14 +54,38 @@
     }];
 }
 
+- (void)setSelectedFriendIdList:(NSMutableArray *)selectedFriendIdList {
+    _selectedFriendIdList = selectedFriendIdList;
+    [self.tableView reloadData];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [FriendStore store].friendList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.textLabel.text = [[FriendStore store].friendList[indexPath.row] name];
+    Friend *friend = [FriendStore store].friendList[indexPath.row];
+    cell.textLabel.text = friend.name;
+    if ([_selectedFriendIdList containsObject:friend.fid]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    Friend *friend = [FriendStore store].friendList[indexPath.row];
+    if ([_selectedFriendIdList containsObject:friend.fid]) {
+        [_selectedFriendIdList removeObject:friend.fid];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    } else {
+        [_selectedFriendIdList addObject:friend.fid];
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
