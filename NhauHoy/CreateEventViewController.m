@@ -39,8 +39,9 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSString *name = _nameField.text;
     NSDate *startDate = _dateField.date;
+    NSNumber *totalBill = @(_totalBillField.text.integerValue);
 
-    [ServerHelper getJsonFromPath:@"/v1/events" parameters:@{@"name": name, @"start_time": startDate} requestMethod:@"POST" success:^(id response) {
+    [ServerHelper getJsonFromPath:@"/v1/events" parameters:@{@"name": name, @"start_time": startDate, @"total_bill": totalBill} requestMethod:@"POST" success:^(id response) {
         Event *event = [[Event alloc] initWithData:response[@"event"]];
         [[EventStore store].eventList addObject:event];
         [MBProgressHUD hideHUDForView:self.view animated:YES];

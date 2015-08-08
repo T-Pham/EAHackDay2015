@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="dateField" destination="KJY-kj-LH8" id="5Ov-UY-IYS"/>
                 <outlet property="nameField" destination="qNw-xm-gch" id="uA9-co-M9n"/>
+                <outlet property="totalBillField" destination="vaP-cq-X4e" id="n2E-s6-Qgn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,8 +22,13 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Total" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vaP-cq-X4e" customClass="JVFloatLabeledTextField">
+                    <rect key="frame" x="15" y="126" width="290" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                </textField>
                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="KJY-kj-LH8">
-                    <rect key="frame" x="0.0" y="126" width="320" height="162"/>
+                    <rect key="frame" x="0.0" y="171" width="320" height="162"/>
                     <date key="date" timeIntervalSinceReferenceDate="460743202.670964">
                         <!--2015-08-08 16:13:22 +0000-->
                     </date>
@@ -31,8 +37,11 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="KJY-kj-LH8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9bL-7Z-Qa5"/>
-                <constraint firstItem="KJY-kj-LH8" firstAttribute="top" secondItem="qNw-xm-gch" secondAttribute="bottom" constant="15" id="Zz8-Db-p54"/>
+                <constraint firstItem="vaP-cq-X4e" firstAttribute="top" secondItem="qNw-xm-gch" secondAttribute="bottom" constant="15" id="ARl-tb-Io2"/>
+                <constraint firstItem="vaP-cq-X4e" firstAttribute="trailing" secondItem="qNw-xm-gch" secondAttribute="trailing" id="SLY-8a-awB"/>
+                <constraint firstItem="vaP-cq-X4e" firstAttribute="leading" secondItem="qNw-xm-gch" secondAttribute="leading" id="akv-y3-yZ2"/>
                 <constraint firstItem="qNw-xm-gch" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="81" id="bpZ-ld-jNx"/>
+                <constraint firstItem="KJY-kj-LH8" firstAttribute="top" secondItem="vaP-cq-X4e" secondAttribute="bottom" constant="15" id="g6h-Pt-xy4"/>
                 <constraint firstItem="qNw-xm-gch" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="ieE-Zm-ZbB"/>
                 <constraint firstAttribute="trailing" secondItem="qNw-xm-gch" secondAttribute="trailing" constant="15" id="o12-2k-qxo"/>
                 <constraint firstAttribute="trailing" secondItem="KJY-kj-LH8" secondAttribute="trailing" id="ybD-Dt-ZvX"/>
