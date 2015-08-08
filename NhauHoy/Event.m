@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Thanh Pham. All rights reserved.
 //
 
+#import <ISO8601DateFormatter.h>
+
 #import "Event.h"
 
 @implementation Event
@@ -16,16 +18,17 @@
     return self;
 }
 
+- (void)setData:(NSDictionary *)data {
+    _data = data;
+    _startTime = [[[ISO8601DateFormatter alloc] init] dateFromString:_data[@"start_time"]];
+}
+
 - (NSString *)eid {
     return _data[@"_id"];
 }
 
 - (NSString *)name {
     return _data[@"name"];
-}
-
-- (NSDate *)startTime {
-    return _data[@"start_time"];
 }
 
 - (NSArray *)friendIdList {
