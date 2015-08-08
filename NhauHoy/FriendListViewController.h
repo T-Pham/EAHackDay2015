@@ -7,18 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Event.h"
 
 @class FriendListViewController;
 
-@protocol FriendListViewControllerDelegate <NSObject>
-
-- (void)friendListViewControllerDidSave:(FriendListViewController *)friendListViewController;
-
-@end
-
 @interface FriendListViewController : UITableViewController
 
-@property (nonatomic) NSArray *selectedFriendIdList;
-@property (nonatomic, weak) id<FriendListViewControllerDelegate> delegate;
+@property (nonatomic) Event *event;
 
 @end

@@ -17,7 +17,7 @@
 }
 
 - (NSString *)fid {
-    return _data[@"_id"];
+    return _data[@"user_id"];
 }
 
 - (NSString *)name {

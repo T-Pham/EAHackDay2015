@@ -21,7 +21,6 @@
 @end
 
 @implementation FriendListViewController
-@synthesize selectedFriendIdList=_selectedFriendIdList;
 
 - (instancetype)init {
     self = [super init];
@@ -63,6 +62,11 @@
     }];
 }
 
+- (void)setEvent:(Event *)event {
+    _event = event;
+    [self setSelectedFriendIdList:_event.friendIdList];
+}
+
 - (void)setSelectedFriendIdList:(NSArray *)selectedFriendIdList {
     _selectedFriendIdList = [NSMutableArray arrayWithArray:selectedFriendIdList];
     [self.tableView reloadData];
@@ -73,8 +77,23 @@
 }
 
 - (void)saveButtonTapped:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    [_delegate friendListViewControllerDidSave:self];
+    [self sendSaveFriendListRequest];
+}
+
+- (void)sendSaveFriendListRequest {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [ServerHelper getJsonFromPath:@"/v1/rsvps" parameters:@{@"event_id": _event.eid, @"user_ids": _selectedFriendIdList} requestMethod:@"POST" success:^(id response) {
+        _event.friendIdList = _selectedFriendIdList;
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } failure:^(NSError *error) {
+        [[[UIAlertView alloc] initWithTitle:@"Failed to update friend list" message:error.localizedDescription cancelButtonTitle:@"Cancel" otherButtonTitle:@"Retry"] showUsingBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
+            if (buttonIndex == 1) {
+                [self sendSaveFriendListRequest];
+            }
+        }];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

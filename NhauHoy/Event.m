@@ -28,7 +28,7 @@
 - (void)setData:(NSDictionary *)data {
     _data = data;
     _startTime = [[[ISO8601DateFormatter alloc] init] dateFromString:_data[@"start_time"]];
-    _friendIdList = [NSMutableArray arrayWithArray:_data[@"rsvps"]];
+    _friendIdList = [NSMutableArray arrayWithArray:[_data[@"rsvps"] valueForKey:@"user_id"]];
 }
 
 - (NSString *)eid {
