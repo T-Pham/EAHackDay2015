@@ -83,7 +83,7 @@
 - (void)sendSaveFriendListRequest {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [ServerHelper getJsonFromPath:@"/v1/rsvps" parameters:@{@"event_id": _event.eid, @"user_ids": _selectedFriendIdList} requestMethod:@"POST" success:^(id response) {
-        _event.friendIdList = _selectedFriendIdList;
+        _event.data = response[@"event"];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         [self dismissViewControllerAnimated:YES completion:nil];
     } failure:^(NSError *error) {
