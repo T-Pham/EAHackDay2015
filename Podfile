@@ -3,6 +3,8 @@
 
 target 'NhauHoy' do
     pod "AFNetworking", "~> 2.0"
+    pod 'FBSDKCoreKit'
+    pod 'FBSDKLoginKit'
 end
 
 target 'NhauHoyTests' do
