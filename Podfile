@@ -8,6 +8,7 @@ target 'NhauHoy' do
     pod 'MBProgressHUD', '~> 0.9'
     pod 'UIAlertView+Block', '~> 1.1'
     pod 'ISO8601DateFormatter', '0.7'
+    pod 'JVFloatLabeledTextField', '~> 1.1'
 end
 
 target 'NhauHoyTests' do

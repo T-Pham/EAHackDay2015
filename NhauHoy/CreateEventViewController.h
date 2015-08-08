@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <JVFloatLabeledTextField.h>
 
 @interface CreateEventViewController : UIViewController
+
+@property (nonatomic) IBOutlet JVFloatLabeledTextField *nameField;
 
 @end
