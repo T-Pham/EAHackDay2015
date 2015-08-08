@@ -19,6 +19,7 @@
 		1BE6E3BB1B764949006BF86B /* EventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6E3BA1B764949006BF86B /* EventListViewController.m */; };
 		1BE6E3BF1B765478006BF86B /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6E3BD1B765478006BF86B /* CreateEventViewController.m */; };
 		1BE6E3C01B765478006BF86B /* CreateEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BE6E3BE1B765478006BF86B /* CreateEventViewController.xib */; };
+		1BE6E3C31B765790006BF86B /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6E3C21B765790006BF86B /* Event.m */; };
 		A2DEF149EFEE442C34A2E008 /* libPods-NhauHoy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75CF89114C3E946399258331 /* libPods-NhauHoy.a */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,8 @@
 		1BE6E3BC1B765478006BF86B /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEventViewController.h; sourceTree = "<group>"; };
 		1BE6E3BD1B765478006BF86B /* CreateEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEventViewController.m; sourceTree = "<group>"; };
 		1BE6E3BE1B765478006BF86B /* CreateEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateEventViewController.xib; sourceTree = "<group>"; };
+		1BE6E3C11B765790006BF86B /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		1BE6E3C21B765790006BF86B /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		50FE3666F059625AA8EAE32C /* Pods-NhauHoy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhauHoy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NhauHoy/Pods-NhauHoy.debug.xcconfig"; sourceTree = "<group>"; };
 		75CF89114C3E946399258331 /* libPods-NhauHoy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NhauHoy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F3AD3C8D5FE83524D3E8AF5 /* Pods-NhauHoy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhauHoy.release.xcconfig"; path = "Pods/Target Support Files/Pods-NhauHoy/Pods-NhauHoy.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				1BE6E3BC1B765478006BF86B /* CreateEventViewController.h */,
 				1BE6E3BD1B765478006BF86B /* CreateEventViewController.m */,
 				1BE6E3BE1B765478006BF86B /* CreateEventViewController.xib */,
+				1BE6E3C11B765790006BF86B /* Event.h */,
+				1BE6E3C21B765790006BF86B /* Event.m */,
 			);
 			path = NhauHoy;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				1B276A181B76113600296FB1 /* ServerHelper.m in Sources */,
 				1BE6E3BB1B764949006BF86B /* EventListViewController.m in Sources */,
 				1BE6E3B81B764426006BF86B /* Session.m in Sources */,
+				1BE6E3C31B765790006BF86B /* Event.m in Sources */,
 				1B2769EF1B75E51500296FB1 /* AppDelegate.m in Sources */,
 				1B276A111B75E59900296FB1 /* MainViewController.m in Sources */,
 				1B2769EC1B75E51500296FB1 /* main.m in Sources */,
