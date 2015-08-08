@@ -23,7 +23,7 @@
 
 - (void)reloadData {
     _nameLabel.text = _event.name;
-    _totalBillLabel.text = _event.totalBill.description;
+    _billLabel.text = [NSString stringWithFormat:@"%@ (%@ each)", _event.totalBill.description, _event.billForUser];
     _dateLabel.text = _event.startTime.presentationString;
 }
 

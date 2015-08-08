@@ -43,6 +43,10 @@
     return _data[@"total_bill"];
 }
 
+- (NSNumber *)billForUser {
+    return _data[@"bill_for_user"];
+}
+
 - (void)setFriendIdList:(NSArray *)friendIdList {
     _friendIdList = [NSMutableArray arrayWithArray:friendIdList];
 }
