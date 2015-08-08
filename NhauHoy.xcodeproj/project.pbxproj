@@ -21,6 +21,9 @@
 		1BE6E3C01B765478006BF86B /* CreateEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BE6E3BE1B765478006BF86B /* CreateEventViewController.xib */; };
 		1BE6E3C31B765790006BF86B /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6E3C21B765790006BF86B /* Event.m */; };
 		1BE6E3C61B766753006BF86B /* EventStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6E3C51B766753006BF86B /* EventStore.m */; };
+		1BE6E3D11B766E9B006BF86B /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6E3D01B766E9B006BF86B /* Friend.m */; };
+		1BE6E3D41B766F81006BF86B /* FriendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6E3D31B766F81006BF86B /* FriendListViewController.m */; };
+		1BE6E3D71B766FC8006BF86B /* FriendStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6E3D61B766FC8006BF86B /* FriendStore.m */; };
 		A2DEF149EFEE442C34A2E008 /* libPods-NhauHoy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75CF89114C3E946399258331 /* libPods-NhauHoy.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +64,12 @@
 		1BE6E3C21B765790006BF86B /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		1BE6E3C41B766753006BF86B /* EventStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStore.h; sourceTree = "<group>"; };
 		1BE6E3C51B766753006BF86B /* EventStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventStore.m; sourceTree = "<group>"; };
+		1BE6E3CF1B766E9B006BF86B /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		1BE6E3D01B766E9B006BF86B /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		1BE6E3D21B766F81006BF86B /* FriendListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendListViewController.h; sourceTree = "<group>"; };
+		1BE6E3D31B766F81006BF86B /* FriendListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendListViewController.m; sourceTree = "<group>"; };
+		1BE6E3D51B766FC8006BF86B /* FriendStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendStore.h; sourceTree = "<group>"; };
+		1BE6E3D61B766FC8006BF86B /* FriendStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendStore.m; sourceTree = "<group>"; };
 		50FE3666F059625AA8EAE32C /* Pods-NhauHoy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhauHoy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NhauHoy/Pods-NhauHoy.debug.xcconfig"; sourceTree = "<group>"; };
 		75CF89114C3E946399258331 /* libPods-NhauHoy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NhauHoy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F3AD3C8D5FE83524D3E8AF5 /* Pods-NhauHoy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhauHoy.release.xcconfig"; path = "Pods/Target Support Files/Pods-NhauHoy/Pods-NhauHoy.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +138,12 @@
 				1BE6E3C21B765790006BF86B /* Event.m */,
 				1BE6E3C41B766753006BF86B /* EventStore.h */,
 				1BE6E3C51B766753006BF86B /* EventStore.m */,
+				1BE6E3CF1B766E9B006BF86B /* Friend.h */,
+				1BE6E3D01B766E9B006BF86B /* Friend.m */,
+				1BE6E3D21B766F81006BF86B /* FriendListViewController.h */,
+				1BE6E3D31B766F81006BF86B /* FriendListViewController.m */,
+				1BE6E3D51B766FC8006BF86B /* FriendStore.h */,
+				1BE6E3D61B766FC8006BF86B /* FriendStore.m */,
 			);
 			path = NhauHoy;
 			sourceTree = "<group>";
@@ -313,9 +328,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BE6E3BF1B765478006BF86B /* CreateEventViewController.m in Sources */,
+				1BE6E3D71B766FC8006BF86B /* FriendStore.m in Sources */,
+				1BE6E3D11B766E9B006BF86B /* Friend.m in Sources */,
 				1B276A181B76113600296FB1 /* ServerHelper.m in Sources */,
 				1BE6E3BB1B764949006BF86B /* EventListViewController.m in Sources */,
 				1BE6E3B81B764426006BF86B /* Session.m in Sources */,
+				1BE6E3D41B766F81006BF86B /* FriendListViewController.m in Sources */,
 				1BE6E3C31B765790006BF86B /* Event.m in Sources */,
 				1B2769EF1B75E51500296FB1 /* AppDelegate.m in Sources */,
 				1B276A111B75E59900296FB1 /* MainViewController.m in Sources */,
