@@ -16,4 +16,6 @@
 @property (nonatomic) IBOutlet UILabel *nameLabel;
 @property (nonatomic) IBOutlet UILabel *dateLabel;
 
+- (IBAction)editFriendsButtonTapped:(id)sender;
+
 @end

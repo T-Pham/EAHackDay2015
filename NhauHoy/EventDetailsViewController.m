@@ -8,6 +8,7 @@
 
 #import "EventDetailsViewController.h"
 #import "NSDate+NhauHoy.h"
+#import "FriendListViewController.h"
 
 @interface EventDetailsViewController ()
 
@@ -28,6 +29,13 @@
 - (void)setEvent:(Event *)event {
     _event = event;
     [self reloadData];
+}
+
+- (void)editFriendsButtonTapped:(id)sender {
+    FriendListViewController *friendListViewController = [[FriendListViewController alloc] init];
+    friendListViewController.selectedFriendIdList = _event.friendIdList;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:friendListViewController];
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 @end

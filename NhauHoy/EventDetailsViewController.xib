@@ -16,27 +16,39 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlU-JP-nVy">
-                    <rect key="frame" x="15" y="71" width="290" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlU-JP-nVy">
+                    <rect key="frame" x="15" y="71" width="322" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMg-uX-mhV">
-                    <rect key="frame" x="15" y="106.5" width="290" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMg-uX-mhV">
+                    <rect key="frame" x="15" y="106" width="322" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4of-Wr-f47">
+                    <rect key="frame" x="15" y="141.5" width="290" height="30"/>
+                    <state key="normal" title="Edit friends">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="editFriendsButtonTapped:" destination="-1" eventType="touchUpInside" id="nor-SB-Sr9"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="SMg-uX-mhV" firstAttribute="leading" secondItem="YlU-JP-nVy" secondAttribute="leading" id="0uH-KO-W9c"/>
                 <constraint firstItem="YlU-JP-nVy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="3RG-IC-jg9"/>
                 <constraint firstItem="SMg-uX-mhV" firstAttribute="trailing" secondItem="YlU-JP-nVy" secondAttribute="trailing" id="G2n-gB-6dm"/>
+                <constraint firstItem="4of-Wr-f47" firstAttribute="leading" secondItem="SMg-uX-mhV" secondAttribute="leading" id="Kad-mt-fwm"/>
                 <constraint firstAttribute="trailing" secondItem="YlU-JP-nVy" secondAttribute="trailing" constant="15" id="RpA-za-nLY"/>
                 <constraint firstItem="SMg-uX-mhV" firstAttribute="top" secondItem="YlU-JP-nVy" secondAttribute="bottom" constant="15" id="Udw-Mn-lxn"/>
+                <constraint firstItem="4of-Wr-f47" firstAttribute="top" secondItem="SMg-uX-mhV" secondAttribute="bottom" constant="15" id="Vb8-O2-VCk"/>
                 <constraint firstItem="YlU-JP-nVy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="71" id="YLk-5O-hPD"/>
+                <constraint firstItem="4of-Wr-f47" firstAttribute="trailing" secondItem="SMg-uX-mhV" secondAttribute="trailing" id="ZxH-uR-B1E"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

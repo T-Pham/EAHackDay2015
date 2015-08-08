@@ -13,11 +13,14 @@
 #import "FriendStore.h"
 #import "ServerHelper.h"
 
-@interface FriendListViewController ()
+@interface FriendListViewController () {
+    NSMutableArray *_selectedFriendIdList;
+}
 
 @end
 
 @implementation FriendListViewController
+@synthesize selectedFriendIdList=_selectedFriendIdList;
 
 - (instancetype)init {
     self = [super init];
@@ -54,8 +57,8 @@
     }];
 }
 
-- (void)setSelectedFriendIdList:(NSMutableArray *)selectedFriendIdList {
-    _selectedFriendIdList = selectedFriendIdList;
+- (void)setSelectedFriendIdList:(NSArray *)selectedFriendIdList {
+    _selectedFriendIdList = [NSMutableArray arrayWithArray:selectedFriendIdList];
     [self.tableView reloadData];
 }
 
